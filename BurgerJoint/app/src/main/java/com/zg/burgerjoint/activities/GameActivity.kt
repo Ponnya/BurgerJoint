@@ -154,7 +154,7 @@ class GameActivity : AppCompatActivity() {
             }
     }
 
-    private fun setUpTouchListener() {
+    private fun setUpTouchListener() {/*
         ivGameBurger.setOnTouchListener { view , motionEvent ->
             when(motionEvent.action){
                 MotionEvent.ACTION_DOWN ->{
@@ -173,7 +173,7 @@ class GameActivity : AppCompatActivity() {
                 }
             }
             true
-        }
+        }*/
         ivGameBurger.setOnTouchListener { _, motionEvent ->
             burgerGestureDetector.onTouchEvent(motionEvent)
         }

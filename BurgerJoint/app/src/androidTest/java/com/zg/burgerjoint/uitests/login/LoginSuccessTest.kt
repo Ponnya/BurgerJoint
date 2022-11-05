@@ -5,23 +5,29 @@ import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.zg.burgerjoint.R
 import com.zg.burgerjoint.activities.LoginActivity
+import com.zg.burgerjoint.activities.MainActivity
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4ClassRunner::class)
 open class LoginSuccessTest {
 
-    private val activityTestRule = ActivityTestRule<LoginActivity>(LoginActivity::class.java)
+    /*private val activityTestRule = ActivityTestRule<LoginActivity>(LoginActivity::class.java)*/
 
-    @Before
+    @get:Rule
+    var activityScenarioRule = activityScenarioRule<LoginActivity>()
+
+  /*  @Before
     open fun setUp(){
         activityTestRule.launchActivity(Intent())
-    }
+    }*/
 
     @Test
     fun checkLoginButtonIsDisplayed() {
